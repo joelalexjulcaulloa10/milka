@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Milka ❤️</title>
+
 <style>
 body {
     margin: 0;
@@ -18,11 +17,9 @@ body {
     overflow: hidden;
 }
 
-/* Fondo con slideshow */
+/* Fondo slideshow */
 .bg {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -44,75 +41,54 @@ body {
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-    max-width: 400px;
-    backdrop-filter: blur(10px);
-}
-
-h1 {
-    color: #ff8fab;
-}
-
-p {
-    font-size: 18px;
 }
 
 button {
-    margin-top: 20px;
-    padding: 12px 20px;
-    font-size: 16px;
+    margin-top: 15px;
+    padding: 10px 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 #yes {
-    background-color: #ff4d6d;
+    background: #ff4d6d;
     color: white;
 }
 
 #no {
-    background-color: #ccc;
+    background: gray;
 }
 </style>
 </head>
+
 <body>
 
 <div class="bg"></div>
 
 <div class="container">
     <h1>Milka ❤️</h1>
-    <p>
-        Desde que llegaste a mi vida, todo se siente diferente...
-        <br><br>
-        Me haces feliz de una forma que no puedo explicar.
-        <br><br>
-        ¿Quieres ser mi enamorada? 💖
-    </p>
+    <p>Desde que llegaste a mi vida todo es más bonito...</p>
+    <p>¿Quieres ser mi enamorada? 💖</p>
 
-    <button id="yes" onclick="respuestaSi()">Sí 💕</button>
-    <button id="no" onmouseover="moverBoton()">No 😢</button>
+    <button id="yes" onclick="si()">Sí 💕</button>
+    <button id="no" onmouseover="mover()">No 😢</button>
 </div>
 
 <script>
-function respuestaSi() {
-    // Cambiar fondo a la imagen final
-    const bg = document.querySelector('.bg');
-    bg.style.animation = 'none';
-    bg.style.backgroundImage = "url('final.jpg')"; // <-- pon aquí tu imagen final
+function si() {
+    document.querySelector('.bg').style.animation = "none";
+    document.querySelector('.bg').style.backgroundImage = "url('final.jpg')";
 
-    // Mostrar mensaje
-    document.querySelector('.container').innerHTML = `
-        <h1 style="color:#fff;">Sabía que dirías que sí 💖🥹</h1>
-        <p style="font-size:18px;">Ahora oficialmente… eres mi enamorada 💕</p>
-    `;
+    document.querySelector('.container').innerHTML =
+        "<h1>Sabía que dirías que sí 💖🥹</h1>";
 }
 
-function moverBoton() {
-    const boton = document.getElementById('no');
-    boton.style.position = 'absolute';
-    boton.style.top = Math.random() * window.innerHeight + 'px';
-    boton.style.left = Math.random() * window.innerWidth + 'px';
+function mover() {
+    let btn = document.getElementById("no");
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * window.innerHeight + "px";
+    btn.style.left = Math.random() * window.innerWidth + "px";
 }
 </script>
 
